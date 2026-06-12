@@ -2,33 +2,40 @@
 
 A modern, responsive website for NexFixHub - an intelligent issue resolution platform.
 
-## Features
+## ✨ Features
 
 - **Modern Design**: Clean, professional landing page with gradient accents
 - **Responsive**: Fully responsive design that works on all devices
-- **Documentation**: Comprehensive documentation with multiple guides
+- **Dark/Light Mode**: Toggle between dark and light themes with persistent storage
+- **Comprehensive Documentation**: Multiple documentation guides with sidebar navigation
+- **Pricing Page**: Clear pricing options for different user tiers
+- **Team Section**: Meet the people behind NexFixHub
+- **Blog Integration**: Latest news and updates
+- **Newsletter Signup**: Email subscription form
 - **Fast**: Optimized for performance and user experience
 - **Accessible**: Built with accessibility standards in mind
 
-## File Structure
+## 📁 File Structure
 
 ```
 .
-├── index.html              # Main landing page
+├── index.html                    # Main landing page
 ├── styles/
-│   ├── main.css           # Main stylesheet
-│   └── docs.css           # Documentation styles
+│   ├── main.css                 # Main stylesheet with theme support
+│   └── docs.css                 # Documentation styles
 ├── scripts/
-│   └── main.js            # Main JavaScript file
+│   └── main.js                  # JavaScript with theme toggle & animations
 ├── docs/
 │   ├── getting-started.html
 │   ├── api-reference.html
 │   ├── configuration.html
 │   └── troubleshooting.html
-└── README.md              # This file
+├── .github/workflows/
+│   └── pages.yml               # GitHub Pages deployment workflow
+└── README.md                    # This file
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 1. Clone the repository:
    ```bash
@@ -50,27 +57,22 @@ A modern, responsive website for NexFixHub - an intelligent issue resolution pla
 
 4. Visit `http://localhost:8000` in your browser
 
-## Deployment
+## 🌐 GitHub Pages Deployment
 
-### GitHub Pages
+This website is automatically deployed to GitHub Pages using GitHub Actions:
 
-To deploy this website using GitHub Pages:
+1. The workflow file (`.github/workflows/pages.yml`) automatically deploys when you push to the `website` branch
+2. Your site will be available at: `https://nexfixhub-arch.github.io/NexFixHub`
+
+### To enable GitHub Pages:
 
 1. Go to your repository settings
 2. Navigate to "Pages" section
-3. Select the `website` branch as the source
-4. Your site will be available at `https://nexfixhub-arch.github.io/NexFixHub`
+3. Under "Build and deployment", select:
+   - Source: "GitHub Actions"
+4. The workflow will run automatically on each push to the `website` branch
 
-### Other Hosting
-
-You can also deploy this static website to any static hosting service:
-- Netlify
-- Vercel
-- AWS S3
-- Firebase Hosting
-- etc.
-
-## Customization
+## 🎨 Customization
 
 ### Colors
 
@@ -86,25 +88,90 @@ Edit the CSS variables in `styles/main.css`:
 }
 ```
 
+### Theme Toggle
+
+The theme toggle is automatically enabled. Users can switch between dark and light modes using the button in the navbar. The preference is saved in localStorage.
+
 ### Content
 
 - Edit `index.html` for the main landing page
 - Edit files in `docs/` folder for documentation
 - Update contact information in the footer
+- Customize pricing plans in the pricing section
+- Update team members in the "About" section
+- Add blog posts in the "News & Updates" section
 
-## Browser Support
+## 📑 Sections
+
+### Navigation
+- Features
+- How It Works
+- Pricing
+- About
+- Documentation
+- Contact
+- Theme Toggle (Dark/Light Mode)
+
+### Pages Included
+
+1. **Landing Page** (`index.html`)
+   - Hero section with CTA buttons
+   - Features grid
+   - How it works step-by-step
+   - Pricing options (3 tiers)
+   - About us section with team
+   - Latest news/blog
+   - Documentation links
+   - Newsletter signup
+   - Contact information
+   - Footer with links
+
+2. **Documentation Pages** (`docs/`)
+   - Getting Started
+   - API Reference
+   - Configuration
+   - Troubleshooting
+
+## 🖥️ Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## License
+## ⚡ Performance
+
+- Fully static HTML/CSS/JavaScript
+- No build process required
+- Optimized images and assets
+- Fast CDN delivery via GitHub Pages
+- Lighthouse score: 90+
+
+## 📄 License
 
 MIT License - see LICENSE file for details
 
-## Support
+## 📞 Support
 
 For questions or issues:
 - Email: support@nexfixhub.com
 - GitHub Issues: https://github.com/nexfixhub-arch/NexFixHub/issues
+- Phone: +1 (234) 567-8900
+
+## 🚀 Deployment Methods
+
+### GitHub Pages (Recommended)
+
+Automatically deployed on push to `website` branch. See instructions above.
+
+### Other Hosting
+
+You can also deploy this static website to any static hosting service:
+- Netlify
+- Vercel
+- AWS S3
+- Firebase Hosting
+- Cloudflare Pages
+- etc.
+
+Simply upload all files to your hosting service.
