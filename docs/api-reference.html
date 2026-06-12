@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - NexFixHub Documentation</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/docs.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-wrench"></i>
+                <span>NexFixHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#documentation">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <h3>Documentation</h3>
+            <ul>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="api-reference.html" class="active">API Reference</a></li>
+                <li><a href="configuration.html">Configuration</a></li>
+                <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>API Reference</h1>
+            
+            <section>
+                <h2>analyzeRepository()</h2>
+                <p>Analyzes a GitHub repository for issues and vulnerabilities.</p>
+                <pre><code>hub.analyzeRepository(repositoryPath, options)</code></pre>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><strong>repositoryPath</strong> (string) - Repository in format "owner/repo"</li>
+                    <li><strong>options</strong> (object) - Optional configuration</li>
+                </ul>
+                <h3>Returns</h3>
+                <pre><code>{
+    issues: Array,
+    vulnerabilities: Array,
+    suggestions: Array,
+    score: Number
+}</code></pre>
+            </section>
+
+            <section>
+                <h2>getIssueDetails()</h2>
+                <p>Get detailed information about a specific issue.</p>
+                <pre><code>hub.getIssueDetails(issueId)</code></pre>
+            </section>
+
+            <section>
+                <h2>suggestFix()</h2>
+                <p>Get AI-powered suggestions for fixing an issue.</p>
+                <pre><code>hub.suggestFix(issueId)</code></pre>
+            </section>
+
+            <section>
+                <h2>Error Handling</h2>
+                <p>All API calls return errors in the following format:</p>
+                <pre><code>{
+    error: true,
+    code: 'ERROR_CODE',
+    message: 'Error description'
+}</code></pre>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NexFixHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

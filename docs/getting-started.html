@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - NexFixHub Documentation</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/docs.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-wrench"></i>
+                <span>NexFixHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#documentation">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <h3>Documentation</h3>
+            <ul>
+                <li><a href="getting-started.html" class="active">Getting Started</a></li>
+                <li><a href="api-reference.html">API Reference</a></li>
+                <li><a href="configuration.html">Configuration</a></li>
+                <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Getting Started</h1>
+            
+            <section>
+                <h2>Installation</h2>
+                <p>To get started with NexFixHub, follow these simple steps:</p>
+                <pre><code>npm install nexfixhub</code></pre>
+                <p>Or using yarn:</p>
+                <pre><code>yarn add nexfixhub</code></pre>
+            </section>
+
+            <section>
+                <h2>Quick Start</h2>
+                <p>Create your first analysis in just a few minutes:</p>
+                <pre><code>const NexFixHub = require('nexfixhub');
+
+const hub = new NexFixHub({
+    apiKey: 'your-api-key'
+});
+
+// Analyze your repository
+await hub.analyzeRepository('owner/repo');</code></pre>
+            </section>
+
+            <section>
+                <h2>Authentication</h2>
+                <p>To authenticate with NexFixHub, you need an API key:</p>
+                <ol>
+                    <li>Create an account on NexFixHub</li>
+                    <li>Generate an API key from your dashboard</li>
+                    <li>Set it in your environment: <code>NEXFIXHUB_API_KEY=your-key</code></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <ul>
+                    <li>Read the <a href="api-reference.html">API Reference</a></li>
+                    <li>Explore <a href="configuration.html">Configuration Options</a></li>
+                    <li>Check out <a href="troubleshooting.html">Troubleshooting Guide</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NexFixHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
