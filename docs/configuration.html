@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration - NexFixHub Documentation</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/docs.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-wrench"></i>
+                <span>NexFixHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#documentation">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <h3>Documentation</h3>
+            <ul>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="api-reference.html">API Reference</a></li>
+                <li><a href="configuration.html" class="active">Configuration</a></li>
+                <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Configuration</h1>
+            
+            <section>
+                <h2>Configuration Options</h2>
+                <p>NexFixHub can be configured with various options:</p>
+                <pre><code>const hub = new NexFixHub({
+    apiKey: 'your-api-key',
+    timeout: 30000,
+    retries: 3,
+    logLevel: 'info',
+    analysisDepth: 'full',
+    excludePatterns: ['node_modules', 'dist']
+});</code></pre>
+            </section>
+
+            <section>
+                <h2>Environment Variables</h2>
+                <ul>
+                    <li><code>NEXFIXHUB_API_KEY</code> - Your API key</li>
+                    <li><code>NEXFIXHUB_TIMEOUT</code> - Request timeout in milliseconds</li>
+                    <li><code>NEXFIXHUB_LOG_LEVEL</code> - Log level (debug, info, warn, error)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Analysis Depth</h2>
+                <p>Choose the depth of analysis:</p>
+                <ul>
+                    <li><strong>quick</strong> - Fast surface-level analysis</li>
+                    <li><strong>standard</strong> - Balanced analysis (default)</li>
+                    <li><strong>full</strong> - Deep comprehensive analysis</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Exclude Patterns</h2>
+                <p>Configure which files and directories to exclude from analysis:</p>
+                <pre><code>excludePatterns: [
+    'node_modules',
+    'dist',
+    'build',
+    '*.min.js',
+    '.git'
+]</code></pre>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NexFixHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
