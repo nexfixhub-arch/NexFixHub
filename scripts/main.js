@@ -1,3 +1,33 @@
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+const body = document.body;
+
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    updateThemeIcon();
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const theme = body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
+    updateThemeIcon();
+});
+
+function updateThemeIcon() {
+    const icon = themeToggle.querySelector('i');
+    if (body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+}
+
 // Smooth scroll behavior for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -28,7 +58,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.feature-card, .step, .doc-card').forEach(el => {
+document.querySelectorAll('.feature-card, .step, .doc-card, .blog-card, .pricing-card, .team-member').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -65,3 +95,22 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+// Newsletter form handling
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        
+        // Show success message
+        const originalText = newsletterForm.querySelector('.btn').textContent;
+        newsletterForm.querySelector('.btn').textContent = 'Subscribed! ✓';
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+            newsletterForm.querySelector('.btn').textContent = originalText;
+            newsletterForm.reset();
+        }, 3000);
+    });
+}
